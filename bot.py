@@ -79,12 +79,9 @@ class CustomClient(discord.Client):
                 else:
                     await message.channel.send('You do not have the MW2 Admin Role!')
             case '!veto':
-                #self.vetos.append(126002959250227201)
                 if self.mode == '':
                     await message.channel.send('No Mappool has been selected yet!')
                 else:
-                    #if message.author.id == '126002959250227201':
-                    #    await message.channel.send('test')
                     if message.author.id in self.revoked:
                         await message.channel.send(message.author.name + ' was too late today, and has been revoked the right to veto!')
                     elif message.author.id in self.vetos:
